@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entities.Funcionario;
+import com.interfaces.IFuncionarioRepository;
 import com.repositories.FuncionarioRepository;
 
 @Service
-public class FuncionarioRegister {
+public class FuncionarioRegister implements IFuncionarioRepository{
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
