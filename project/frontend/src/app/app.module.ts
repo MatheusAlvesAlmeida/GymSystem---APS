@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { CadastroFuncionarioModule } from './cadastro-funcionario/cadastro-funcionario.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OAuthModule } from 'angular-oauth2-oidc';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginModule,
     CadastroFuncionarioModule,
     HttpClientModule,
+    OAuthModule.forRoot(),
     BrowserAnimationsModule,
   ],
   providers: [],
