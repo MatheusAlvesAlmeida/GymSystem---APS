@@ -4,10 +4,10 @@ import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario.compo
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: CadastroFuncionarioComponent,
     data: {
-      id: 'login',
+      id: 'cadastro-funcionario',
       title: 'CadastroFuncionario',
       icon: 'home',
     },
