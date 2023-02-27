@@ -4,7 +4,7 @@ import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario.compo
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'cadastro-funcionario',
     component: CadastroFuncionarioComponent,
     data: {
       id: 'cadastro-funcionario',
