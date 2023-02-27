@@ -31,4 +31,5 @@ public class Funcionario extends Usuario {
     public void setDataAdmissao(String dataAdmissao){
         this.dataAdmissao = dataAdmissao;
     }
+
 }
