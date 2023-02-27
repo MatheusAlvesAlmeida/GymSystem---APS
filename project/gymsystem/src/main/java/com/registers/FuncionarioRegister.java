@@ -7,13 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entities.Funcionario;
-import com.interfaces.IFuncionarioRepository;
 import com.repositories.FuncionarioRepository;
 
 @Service
-public class FuncionarioRegister implements IFuncionarioRepository{
-    @Autowired
+public class FuncionarioRegister{
     private FuncionarioRepository funcionarioRepository;
+
+    @Autowired
+    public FuncionarioRegister(FuncionarioRepository funcionarioRepository) {
+        this.funcionarioRepository = funcionarioRepository;
+    }
 
     public List<Funcionario> getAllUsuarios() {
         List<Funcionario> usuarios = new ArrayList<Funcionario>();
