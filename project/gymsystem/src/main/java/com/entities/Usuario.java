@@ -7,8 +7,12 @@ import jakarta.persistence.*;
 @Table(name = "usuarios")
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "cpf")
     private String cpf;
+    @Column(name = "senha")
+    private String senha;
     @Column(name = "nome")
     private String nome;
     @Column(name = "telefone")
@@ -19,6 +23,18 @@ public class Usuario {
     private String email;
 
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getPassword() {
+        return senha;
+    }
+    public void setPassword(String password) {
+        this.senha = password;
+    }
     public String getCpf() {
         return cpf;
     }

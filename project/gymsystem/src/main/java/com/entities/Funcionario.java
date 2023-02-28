@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "funcionarios")
+
 public class Funcionario extends Usuario {
     @Column(name = "cargo")
     private String cargo;
@@ -30,6 +31,6 @@ public class Funcionario extends Usuario {
     }
     public void setDataAdmissao(String dataAdmissao){
         this.dataAdmissao = dataAdmissao;
-    }
+    } 
 
 }
