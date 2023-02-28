@@ -1,1 +1,25 @@
-<h1>Login</h1>
+<mat-card class="container">
+  <h2 style="margin: 1rem">Bem vindo(a) de volta ao GymSystem</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>CPF</mat-label>
+    <input matInput [(ngModel)]="cpf" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input
+      matInput
+      placeholder="Digite sua senha"
+      name="password"
+      type="password"
+      [(ngModel)]="senha"
+    />
+  </mat-form-field>
+  <button
+    style="margin: 1rem"
+    mat-raised-button
+    color="primary"
+    (click)="submit()"
+  >
+    Submit
+  </button>
+</mat-card>

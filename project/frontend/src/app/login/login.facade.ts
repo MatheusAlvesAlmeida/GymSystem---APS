@@ -9,7 +9,7 @@ export class LoginFacade {
     private readonly api: LoginApi
   ) {}
 
-  public login(user: string) {
-    return this.api.login(user);
+  public login(cpf: string, senha: string) {
+    return this.api.login(cpf, senha);
   }
 }

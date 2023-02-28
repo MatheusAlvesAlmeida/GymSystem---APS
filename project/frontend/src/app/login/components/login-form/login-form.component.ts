@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { LoginFacade } from '../../login.facade';
-import { GoogleApiService } from './google-api.service';
+import { LoginFacade } from '../../login.facade';
+import { Router } from '@angular/router';
 
 // import { ViewChild } from '@angular/core';
 // import { Observable } from 'rxjs';
@@ -10,11 +10,27 @@ import { GoogleApiService } from './google-api.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   constructor(
-    // private readonly loginFacade: LoginFacade,
-    private readonly google: GoogleApiService
+    private readonly loginFacade: LoginFacade,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  cpf: string = '';
+  senha: string = '';
+  async submit() {
+    try {
+      const res = await this.loginFacade.login(this.cpf, this.senha);
+      if (res) {
+        this.router.navigate(['/cadastro-funcionario']);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    this.clear();
+  }
+  clear() {
+    this.cpf = '';
+    this.senha = '';
+  }
 }
