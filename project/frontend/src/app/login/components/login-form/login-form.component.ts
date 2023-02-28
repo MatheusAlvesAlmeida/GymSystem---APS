@@ -21,9 +21,9 @@ export class LoginFormComponent {
   async submit() {
     try {
       const res = await this.loginFacade.login(this.cpf, this.senha);
-      if (res) {
-        this.router.navigate(['/cadastro-funcionario']);
-      }
+      if (res) this.router.navigate(['/cadastro-funcionario']);
+      // redirect
+      
     } catch (error) {
       console.log(error);
     }
