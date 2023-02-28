@@ -6,7 +6,7 @@ import { CadastroFuncionarioState } from './state/cadastro-funcionario.state';
 export class CadastroFuncionarioFacade {
   public constructor(private readonly api: CadastroFuncionarioApi) {}
 
-  public cadastrarFuncionario(funcionario: Object) {
+  public cadastrarFuncionario(funcionario: any) {
     return this.api.cadastrarFuncionario(funcionario);
   }
 }

@@ -9,24 +9,34 @@ import { CadastroFuncionarioFacade } from '../../cadastro-funcionario.facade';
   styleUrls: ['./cadastro-funcionario-form.component.css'],
 })
 export class CadastroFuncionarioFormComponent implements OnInit {
-  nome: string = '';
-  dataNascimento: string = '01/01/2000';
-  salario: number = 0;
   cpf: string = '';
+  senha: string = '';
+  nome: string = '';
+  telefone: string = '';
+  dataNascimento: string = '';
+  email: string = '';
+  cargo: string = '';
+  salario: number = 0;
+  dataAdmissao: string = '';
 
   constructor(
     private readonly cadastroFuncionarioFacade: CadastroFuncionarioFacade
   ) {}
 
   ngOnInit(): void {}
-  cadastrarFuncionario() {
+  async cadastrarFuncionario() {
     const funcionario = {
-      nome: this.nome,
-      dataNascimento: this.dataNascimento,
-      salario: this.salario,
       cpf: this.cpf,
+      senha: this.senha,
+      nome: this.nome,
+      telefone: this.telefone,
+      dataNascimento: this.dataNascimento,
+      email: this.email,
+      cargo: this.cargo,
+      salario: this.salario,
+      dataAdmissao: this.dataAdmissao,
     };
-    const result =
+    const result = await
       this.cadastroFuncionarioFacade.cadastrarFuncionario(funcionario);
     console.log(result);
   }

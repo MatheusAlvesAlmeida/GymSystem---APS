@@ -7,11 +7,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class CadastroFuncionarioApi {
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  private baseUrl = 'http://localhost:3000/api/cadastrar-funcionario/';
+  private baseUrl = 'http://localhost:8080/api/funcionarios';
 
   public constructor(private readonly http: HttpClient) {}
 
-  public cadastrarFuncionario(funcionario: Object) {
-    return this.http.post(this.baseUrl, funcionario, { headers: this.headers });
+  public cadastrarFuncionario(funcionario: any) {
+    console.log(funcionario)
+    return this.http.post(this.baseUrl, funcionario).subscribe(res => {
+      console.log(res)});
   }
 }
