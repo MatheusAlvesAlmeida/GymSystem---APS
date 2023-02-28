@@ -11,7 +11,7 @@ public class Aluno extends Usuario{
     @Column(name = "dataInicio")
     private String dataInicio;
     @Column(name = "treino")
-    private Treino treino;
+    private String treino;
 
     // Getters and Setters
     public String getPlano() {
@@ -26,10 +26,10 @@ public class Aluno extends Usuario{
     public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
-    public Treino getTreino() {
+    public String getTreino() {
         return treino;
     }
-    public void setTreino(Treino treino) {
+    public void setTreino(String treino) {
         this.treino = treino;
     }
 }
