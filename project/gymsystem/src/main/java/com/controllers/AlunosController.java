@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entities.Aluno;
-import com.repositories.AlunoRepository;
+import com.Registers.AlunoRegister;
 
 @RestController
 @RequestMapping("/api/alunos")
 public class AlunosController {
     @Autowired
-    private AlunoRepository alunoRepository;
+    private com.Registers.AlunoRegister alunoRegister;
 
     @RequestMapping
     public Iterable<Aluno> getAlunos() {
-        return alunoRepository.findAll();
+        return alunoRegister.getAlunos();
     }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Aluno postAluno(@RequestBody Aluno aluno) {
-        return alunoRepository.save(aluno);
+        return alunoRegister.saveAluno(aluno);
     }
 }

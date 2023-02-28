@@ -20,7 +20,7 @@ public class MailController {
 	
 	@PostMapping("/send-text")
 	public String send() throws IOException {
-		return mailService.sendTextEmail();
+		return mailService.sendTextEmail("");
 	}
 	
 
