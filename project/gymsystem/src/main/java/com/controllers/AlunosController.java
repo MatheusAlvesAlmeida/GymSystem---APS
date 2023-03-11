@@ -1,11 +1,13 @@
-package com.entities;
+package com.controllers;
+
+import com.entities.Usuario;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "alunos")
 
-public class Aluno extends Usuario {
+public class AlunosController extends Usuario {
     @Column(name = "plano")
     private String plano;
     @Column(name = "dataInicio")
