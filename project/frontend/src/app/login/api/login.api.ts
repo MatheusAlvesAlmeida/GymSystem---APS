@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import axios from 'axios';
 
 @Injectable()
 export class LoginApi {
-  private baseUrl = 'http://localhost:8080/api/funcionarios/login';
+  private baseUrl = 'http://localhost:8080/api/funcionarios';
 
-  public constructor(private readonly http: HttpClient) {}
+  public constructor() {}
 
-  public login(cpf: string, senha: string) {
-    const params = new HttpParams().set('cpf', cpf).set('password', senha);
-    return this.http
-      .post(this.baseUrl, null, {
-        params: params,
-      })
-      .subscribe((response) => {
-        return response;
+  public async login(cpf: string, senha: string): Promise<any> {
+    const url = `${this.baseUrl}/login`;
+    try {
+      const response = await axios.post(url, {
+        cpf: cpf,
+        password: senha,
       });
+      return response;
+    } catch (error: any) {
+      console.error(error);
+      if (error.response && error.response.status === 401)
+        alert('CPF ou senha incorretos');
+      return error;
+    }
   }
 }
