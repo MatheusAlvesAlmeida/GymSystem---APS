@@ -1,5 +1,7 @@
 package com.controllers;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,13 +54,13 @@ class FuncionariosController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam("cpf") String cpf,
-            @RequestParam("password") String password,
-            HttpSession session) {
+    public ResponseEntity<String> login(@RequestBody Map<String, String> body) {
+        String cpf = body.get("cpf");
+        String password = body.get("password");
         Funcionario funcionario = funcionarioRepository.findFuncionarioByCpf(cpf);
         if (funcionario != null && funcionario.getPassword().equals(password)) {
-            session.setAttribute("funcionario", funcionario);
-            return ResponseEntity.status(HttpStatus.CREATED).body("redirect:/funcionario/home");
+            // session.setAttribute("funcionario", funcionario);
+            return ResponseEntity.ok("Login successful");
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid login credentials");
         }
