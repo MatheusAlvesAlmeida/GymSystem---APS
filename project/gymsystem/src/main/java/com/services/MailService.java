@@ -18,12 +18,12 @@ import com.sendgrid.SendGrid;
 public class MailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailService.class);
 	
-	public String sendTextEmail() throws IOException {
+	public String sendTextEmail(String _to) {
 		// the sender email should be the same as we used to Create a Single Sender Verification
-		    Email from = new Email("add the sender email");
-		    String subject = "The subject";
-		    Email to = new Email("reciver");
-		    Content content = new Content("text/plain", "This is a test email");
+		    Email from = new Email("pmssm@cin.ufpe.br");
+		    String subject = "Atualização.";
+		    Email to = new Email(_to);
+		    Content content = new Content("text/plain", "Seu treinador atualizou seu treino, verifique e mantenha-se no foco!");
 		    Mail mail = new Mail(from, subject, to, content);
 		
 		    SendGrid sg = new SendGrid("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");
@@ -35,8 +35,9 @@ public class MailService {
 		      Response response = sg.api(request);
 		      logger.info(response.getBody());
 		      return response.getBody();	     
-		    } catch (IOException ex) {
-		      throw ex;
+		    } catch (Exception e) {
+		      // handle exception
+			  return "";
 		    }	   
 	}
 }
