@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroFuncionarioFacade } from '../../cadastro-funcionario.facade';
-// import { ViewChild } from '@angular/core';
-// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cadastro-funcionario-form',
@@ -36,8 +34,9 @@ export class CadastroFuncionarioFormComponent implements OnInit {
       salario: this.salario,
       dataAdmissao: this.dataAdmissao,
     };
-    const result = await
-      this.cadastroFuncionarioFacade.cadastrarFuncionario(funcionario);
+    const result = await this.cadastroFuncionarioFacade.cadastrarFuncionario(
+      funcionario
+    );
     console.log(result);
   }
 }

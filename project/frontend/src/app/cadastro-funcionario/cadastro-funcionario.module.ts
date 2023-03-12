@@ -4,6 +4,7 @@ import { CadastroFuncionarioFormComponent } from './components/cadastro-funciona
 import { CadastroFuncionarioFacade } from './cadastro-funcionario.facade';
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario.component';
 import { CadastroFuncionarioRoutingModule } from './cadastro-funcionario-routing.module';
+// Material
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
