@@ -1,11 +1,18 @@
 package com.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.services.AlunoObserver;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "alunos")
 
 public class Aluno extends Usuario {
+    private List<AlunoObserver> observers = new ArrayList<>();
+    
     @Column(name = "plano")
     private String plano;
     @Column(name = "dataInicio")
@@ -36,5 +43,20 @@ public class Aluno extends Usuario {
 
     public void setTreino(String treino) {
         this.treino = treino;
+        notifyObservers();
+    }
+
+    public void addObserver(AlunoObserver observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(AlunoObserver observer) {
+        observers.remove(observer);
+    }
+
+    private void notifyObservers() {
+        for (AlunoObserver observer : observers) {
+            observer.update(this);
+        }
     }
 }

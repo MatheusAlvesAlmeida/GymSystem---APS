@@ -19,7 +19,6 @@ public class MailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailService.class);
 	
 	public String sendTextEmail(String _to) {
-		// the sender email should be the same as we used to Create a Single Sender Verification
 		    Email from = new Email("pmssm@cin.ufpe.br");
 		    String subject = "Atualização.";
 		    Email to = new Email(_to);

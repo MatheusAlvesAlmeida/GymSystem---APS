@@ -2,6 +2,6 @@ package com.services;
 
 import com.entities.Aluno;
 
-public interface Observer {
+public interface AlunoObserver {
     void update(Aluno aluno);
 }
