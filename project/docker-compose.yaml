@@ -1,0 +1,17 @@
+version: "3"
+services:
+    account:
+        build:
+            context: ./auth/
+        depends_on:
+            - discovery
+    gymsystem:
+        build:
+            context: ./gymsystem/
+        depends_on:
+            - discovery
+    discovery:
+        build:
+            context: ./discovery/
+        ports:
+            - "8761:8761"
