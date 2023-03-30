@@ -5,13 +5,19 @@ import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreakerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.BodyInserters;
+import org.springframework.web.reactive.function.client.WebClient;
 
+
+import reactor.core.publisher.Mono;
+
+@Component
 public class AccountAPI {
 
-    private final WebClient webClient;
-    private final ReactiveCircuitBreaker circuitBreaker;
+    private WebClient webClient;
+    private ReactiveCircuitBreaker circuitBreaker;
 
-    public AccountServiceApi(WebClient.Builder wBuilder, ReactiveCircuitBreakerFactory cbFactory) {
+    public void AccountServiceApi(WebClient.Builder wBuilder, ReactiveCircuitBreakerFactory cbFactory) {
         this.webClient = wBuilder.baseUrl("lb://account").build();
         this.circuitBreaker = cbFactory.create("account");
     }
