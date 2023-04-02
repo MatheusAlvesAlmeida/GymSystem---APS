@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.entities.Aluno;
-import com.repositories.AlunoRepository;
+import com.aluno.Aluno;
+import com.aluno.IAlunoRepository;
 
 public class LoginAlunoService implements UserDetailsService {
 
     @Autowired
-    private AlunoRepository alunoRepository;
+    private IAlunoRepository alunoRepository;
 
     @Override
     public UserDetails loadUserByUsername(String cpf) throws UsernameNotFoundException {

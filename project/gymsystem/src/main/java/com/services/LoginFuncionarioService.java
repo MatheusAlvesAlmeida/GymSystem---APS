@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.entities.Funcionario;
-import com.repositories.FuncionarioRepository;
+import com.funcionario.Funcionario;
+import com.funcionario.IFuncionarioRepository;
 
 public class LoginFuncionarioService implements UserDetailsService {
 
     @Autowired
-    private FuncionarioRepository funcionarioRepository;
+    private IFuncionarioRepository funcionarioRepository;
 
     @Override
     public UserDetails loadUserByUsername(String cpf) throws UsernameNotFoundException {

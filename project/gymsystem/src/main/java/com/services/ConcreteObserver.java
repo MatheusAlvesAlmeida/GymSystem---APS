@@ -2,7 +2,7 @@ package com.services;
 
 import java.io.IOException;
 
-import com.entities.Aluno;
+import com.aluno.Aluno;
 import com.services.MailService;
 
 public class ConcreteObserver implements Observer {
