@@ -1,6 +1,6 @@
 package com.funcionario;
 
-import com.entities.Usuario;
+import com.shared.Usuario;
 
 import jakarta.persistence.*;
 

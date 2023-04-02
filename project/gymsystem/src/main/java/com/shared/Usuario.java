@@ -1,4 +1,4 @@
-package com.entities;
+package com.shared;
 
 import jakarta.persistence.*;
 

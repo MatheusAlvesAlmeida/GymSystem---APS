@@ -1,12 +1,14 @@
-package com.entities;
+package com.aluno;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.services.Observer;
+import com.shared.Usuario;
 
 import jakarta.persistence.*;
 
+@Entity
 @Table(name = "alunos")
 
 public class Aluno extends Usuario {
