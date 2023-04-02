@@ -1,4 +1,6 @@
-package com.entities;
+package com.funcionario;
+
+import com.entities.Usuario;
 
 import jakarta.persistence.*;
 
