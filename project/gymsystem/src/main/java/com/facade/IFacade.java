@@ -1,7 +1,5 @@
 package com.facade;
 
-import java.util.List;
-
 import com.aluno.Aluno;
 import com.funcionario.Funcionario;
 
@@ -10,7 +8,7 @@ public interface IFacade {
     void createNewAluno(Aluno aluno);
 
     Iterable<Funcionario> getAllFuncionarios();
-    List<Aluno> getAllAlunos();
+    Iterable<Aluno> getAllAlunos();
 
     Funcionario getFuncionarioByCpf(String cpf);
     Aluno getAlunoByCpf(String cpf);
