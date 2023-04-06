@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.services.Observer;
-import com.shared.Usuario;
+import com.usuario.Usuario;
 
 import jakarta.persistence.*;
 

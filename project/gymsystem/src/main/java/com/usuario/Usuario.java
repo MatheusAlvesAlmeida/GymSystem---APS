@@ -1,4 +1,4 @@
-package com.shared;
+package com.usuario;
 
 import jakarta.persistence.*;
 

@@ -7,59 +7,65 @@ import com.aluno.Aluno;
 import com.aluno.AlunoController;
 import com.funcionario.Funcionario;
 import com.funcionario.FuncionarioController;
+import com.usuario.Usuario;
+import com.usuario.UsuarioController;
 
 @Service
-public class Facade implements IFacade{
+public class Facade {
 
     @Autowired private FuncionarioController funcionarioController;
     @Autowired private AlunoController alunoController;
+    @Autowired private UsuarioController usuarioController;
 
-    @Override
+    public Usuario loginUser(String cpf, String password) {
+        return usuarioController.loginUser(cpf, password);
+    }
+
     public void createNewFuncionario(Funcionario funcionario) {
         funcionarioController.createNewFuncionario(funcionario);
     }
 
-    @Override
+    
     public Iterable<Funcionario> getAllFuncionarios() {
         return funcionarioController.getAllFuncionarios();
     }
 
-    @Override
+    
     public Funcionario getFuncionarioByCpf(String cpf) {
         return funcionarioController.getFuncionarioByCpf(cpf);
     }
 
-    @Override
+    
     public void deleteFuncionario(String cpf) {
         funcionarioController.deleteFuncionario(cpf);
     }
 
-    @Override
+    
     public void updateFuncionario(String cpf, Funcionario funcionario) {
         funcionarioController.updateFuncionario(cpf, funcionario);
     }
 
-    @Override
+    
     public void deleteAluno(String cpf) {
         alunoController.deleteAluno(cpf);
     }
 
-    @Override
+    
     public Iterable<Aluno> getAllAlunos() {
         return alunoController.getAllAlunos();
     }
 
-    @Override
+    
     public Aluno getAlunoByCpf(String cpf) {
         return alunoController.getAlunoByCpf(cpf);
     }
     
-    @Override
+    
     public void createNewAluno(Aluno aluno) {
         alunoController.createNewAluno(aluno);
     }
 
-    @Override
+    
     public void updateAluno(String cpf, Aluno aluno) {
         alunoController.updateAluno(cpf, aluno);
     }
