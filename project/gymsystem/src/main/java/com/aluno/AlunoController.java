@@ -1,10 +1,14 @@
 package com.aluno;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import com.treino.Treino;
 import com.treino.TreinoObservable;
 
+@Controller
 public class AlunoController implements AlunoObserver{
     @Autowired AlunoRegister alunoRegister;
     private TreinoObservable treinoObservable;
@@ -36,9 +40,11 @@ public class AlunoController implements AlunoObserver{
 
     @Override
     public void onTreinoUpdated(Treino treino) {
-        Aluno aluno = alunoRegister.getAlunoByCpf(treino.getAluno().getCpf());
-        aluno.setTreino(treino);
-        alunoRegister.update(aluno.getCpf(), aluno);
+        List<Aluno> alunos = treino.getAlunos();
+        for (Aluno aluno : alunos) {
+            aluno.setTreino(treino);
+            alunoRegister.update(aluno.getCpf(), aluno);
+        }
         // Enviar email
     }
 }

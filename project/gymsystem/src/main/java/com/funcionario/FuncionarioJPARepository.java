@@ -1,7 +1,9 @@
 package com.funcionario;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class FuncionarioJPARepository implements IFuncionarioRepository {
 
         @Autowired private FuncionarioDAO funcionarioDAO;

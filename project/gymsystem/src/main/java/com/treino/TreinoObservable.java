@@ -3,8 +3,11 @@ package com.treino;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.aluno.AlunoObserver;
 
+@Component
 public class TreinoObservable {
     private List<AlunoObserver> observers = new ArrayList<>();
 

@@ -1,7 +1,9 @@
 package com.aluno;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class AlunoJPARepository implements IAlunoRepository{
     @Autowired AlunoDAO alunoDAO;
 

@@ -13,7 +13,8 @@ public class Aluno extends Usuario {
     private String plano;
     @Column(name = "dataInicio")
     private String dataInicio;
-    @Column(name = "treino")
+    @ManyToOne
+    @JoinColumn(name = "treino_id")
     private Treino treino;
 
     // Getters and Setters

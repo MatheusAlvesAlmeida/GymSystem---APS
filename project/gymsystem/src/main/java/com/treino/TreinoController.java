@@ -1,7 +1,9 @@
 package com.treino;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class TreinoController {
     private TreinoObservable treinoObservable;
     @Autowired private TreinoRegister treinoRegister;
