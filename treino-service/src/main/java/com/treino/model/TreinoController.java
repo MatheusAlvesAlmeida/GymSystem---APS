@@ -1,4 +1,4 @@
-package com.treino;
+package com.treino.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,17 +14,17 @@ public class TreinoController {
 
     public void createNewTreino(Treino treino) {
         treinoRegister.insert(treino);
-        treinoObservable.notifyObservers(treino);
+        //treinoObservable.notifyObservers(treino);
     }
 
     public void deleteTreino(int id) {
-        treinoObservable.notifyObservers(treinoRegister.getTreinoById(id));
+        //treinoObservable.notifyObservers(treinoRegister.getTreinoById(id));
         treinoRegister.delete(id);
     }
 
     public void updateTreino(int id, Treino treino) {
         treinoRegister.update(id, treino);
-        treinoObservable.notifyObservers(treino);
+        //treinoObservable.notifyObservers(treino);
     }
 
     public Iterable<Treino> getAllTreinos() {

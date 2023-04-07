@@ -1,4 +1,4 @@
-package com.aluno;
+package com.aluno.model;
 
 import org.springframework.data.repository.CrudRepository;
 

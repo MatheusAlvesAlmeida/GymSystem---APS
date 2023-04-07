@@ -1,4 +1,4 @@
-package com.treino;
+package com.treino.model;
 
 import org.springframework.stereotype.Component;
 

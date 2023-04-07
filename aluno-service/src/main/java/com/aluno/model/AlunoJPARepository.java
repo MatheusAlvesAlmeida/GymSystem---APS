@@ -1,4 +1,4 @@
-package com.aluno;
+package com.aluno.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

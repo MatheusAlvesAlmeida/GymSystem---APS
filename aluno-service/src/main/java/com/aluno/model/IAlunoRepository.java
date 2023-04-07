@@ -1,4 +1,4 @@
-package com.aluno;
+package com.aluno.model;
 
 public interface IAlunoRepository{
     void insert(Aluno aluno);

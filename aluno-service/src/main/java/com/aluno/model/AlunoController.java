@@ -1,22 +1,11 @@
-package com.aluno;
-
-import java.util.List;
+package com.aluno.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.treino.Treino;
-import com.treino.TreinoObservable;
-
 @Controller
-public class AlunoController implements AlunoObserver{
+public class AlunoController {
     @Autowired AlunoRegister alunoRegister;
-    private TreinoObservable treinoObservable;
-
-    public AlunoController(TreinoObservable treinoObservable) {
-        this.treinoObservable = treinoObservable;
-        this.treinoObservable.addObserver(this);
-    }
 
     public void createNewAluno(Aluno aluno) {
         alunoRegister.insert(aluno);
@@ -38,13 +27,13 @@ public class AlunoController implements AlunoObserver{
         return alunoRegister.getAlunoByCpf(cpf);
     }
 
-    @Override
-    public void onTreinoUpdated(Treino treino) {
-        List<Aluno> alunos = treino.getAlunos();
-        for (Aluno aluno : alunos) {
-            aluno.setTreino(treino);
-            alunoRegister.update(aluno.getCpf(), aluno);
-        }
-        // Enviar email
-    }
+    // @Override
+    // public void onTreinoUpdated(Treino treino) {
+    //     List<Aluno> alunos = treino.getAlunos();
+    //     for (Aluno aluno : alunos) {
+    //         aluno.setTreino(treino);
+    //         alunoRegister.update(aluno.getCpf(), aluno);
+    //     }
+    //     // Enviar email
+    // }
 }

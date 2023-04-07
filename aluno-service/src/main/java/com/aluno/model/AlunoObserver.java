@@ -1,7 +1,5 @@
-package com.aluno;
+// package com.aluno.model;
 
-import com.treino.Treino;
-
-public interface AlunoObserver {
-    void onTreinoUpdated(Treino treino);
-}
+// public interface AlunoObserver {
+//     void onTreinoUpdated(Treino treino);
+// }

@@ -1,4 +1,4 @@
-package com.treino;
+package com.treino.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
