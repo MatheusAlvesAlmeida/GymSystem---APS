@@ -7,6 +7,8 @@ import com.aluno.Aluno;
 import com.aluno.AlunoController;
 import com.funcionario.Funcionario;
 import com.funcionario.FuncionarioController;
+import com.treino.Treino;
+import com.treino.TreinoController;
 import com.usuario.Usuario;
 import com.usuario.UsuarioController;
 
@@ -16,6 +18,7 @@ public class Facade {
     @Autowired private FuncionarioController funcionarioController;
     @Autowired private AlunoController alunoController;
     @Autowired private UsuarioController usuarioController;
+    @Autowired private TreinoController treinoController;
 
     public Usuario loginUser(String cpf, String password) {
         return usuarioController.loginUser(cpf, password);
@@ -68,5 +71,21 @@ public class Facade {
     
     public void updateAluno(String cpf, Aluno aluno) {
         alunoController.updateAluno(cpf, aluno);
+    }
+
+    public void deleteTreino(int id) {
+        treinoController.deleteTreino(id);
+    }
+
+    public void updateTreino(int id, Treino treino) {
+        treinoController.updateTreino(id, treino);
+    }
+
+    public void createNewTreino(Treino treino) {
+        treinoController.createNewTreino(treino);
+    }
+
+    public Iterable<Treino> getAllTreinos() {
+        return treinoController.getAllTreinos();
     }
 }
