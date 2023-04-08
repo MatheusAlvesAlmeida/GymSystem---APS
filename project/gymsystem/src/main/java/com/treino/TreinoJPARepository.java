@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TreinoJPARepository implements ITreinoRepository{
-    @Autowired TreinoDAO treinoDAO;
+public class TreinoJPARepository implements ITreinoRepository {
+    @Autowired
+    TreinoDAO treinoDAO;
 
     @Override
     public void insert(Treino treino) {
@@ -29,7 +30,10 @@ public class TreinoJPARepository implements ITreinoRepository{
 
     @Override
     public void update(int id, Treino treino) {
-        treinoDAO.deleteById(id);
+        if (!treinoDAO.existsById(id)) {
+            throw new IllegalArgumentException("Treino with id " + id + " not found.");
+        }
+        treino.setId(id);
         treinoDAO.save(treino);
     }
 }

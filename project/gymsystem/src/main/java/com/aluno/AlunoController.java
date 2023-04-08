@@ -9,8 +9,9 @@ import com.treino.Treino;
 import com.treino.TreinoObservable;
 
 @Controller
-public class AlunoController implements AlunoObserver{
-    @Autowired AlunoRegister alunoRegister;
+public class AlunoController implements AlunoObserver {
+    @Autowired
+    AlunoRegister alunoRegister;
     private TreinoObservable treinoObservable;
 
     public AlunoController(TreinoObservable treinoObservable) {
@@ -38,12 +39,14 @@ public class AlunoController implements AlunoObserver{
         return alunoRegister.getAlunoByCpf(cpf);
     }
 
-    @Override
     public void onTreinoUpdated(Treino treino) {
-        String alunoID = treino.getAlunoID();
-        Aluno aluno = alunoRegister.getAlunoByCpf(alunoID);
-        aluno.setTreinoID(alunoID);
-        alunoRegister.update(alunoID, aluno);
+        List<Aluno> alunos = treino.getAlunos();
+        if (alunos != null) {
+            for (Aluno aluno : alunos) {
+                aluno.setTreino(treino);
+                alunoRegister.update(aluno.getCpf(), aluno);
+            }
+        }
         // Enviar email
     }
 }

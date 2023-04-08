@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,8 @@ import com.treino.Treino;
 @RequestMapping("/api/treinos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class TreinosAPI {
-    @Autowired Facade facade;
+    @Autowired
+    Facade facade;
 
     @RequestMapping
     public Iterable<Treino> getTreinos() {
@@ -40,9 +42,9 @@ public class TreinosAPI {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public ResponseEntity<Object> putTreino(@RequestBody int id, Treino treino) {
+    public ResponseEntity<Object> putTreino(@PathVariable int id, @RequestBody Treino treino) {
         facade.updateTreino(id, treino);
         return ResponseEntity.ok().build();
     }
