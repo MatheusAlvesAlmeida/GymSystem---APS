@@ -1,9 +1,11 @@
-com/treino/api/TreinosAPI.class
 com/treino/App.class
-com/treino/model/TreinoController.class
 com/treino/model/Treino.class
+com/treino/model/Treino$TreinoBuilder.class
 com/treino/model/TreinoDAO.class
 com/treino/model/TreinoObservable.class
 com/treino/model/TreinoRegister.class
+com/treino/model/TreinoDTO.class
+com/treino/api/TreinosAPI.class
+com/treino/model/TreinoController.class
 com/treino/model/TreinoJPARepository.class
 com/treino/model/ITreinoRepository.class

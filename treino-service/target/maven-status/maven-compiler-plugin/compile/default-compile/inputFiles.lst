@@ -5,5 +5,6 @@
 /home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/TreinoRegister.java
 /home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/TreinoJPARepository.java
 /home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/TreinoDAO.java
+/home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/TreinoDTO.java
 /home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/Treino.java
 /home/matheus/Documentos/CIN/GymSystem---APS/treino-service/src/main/java/com/treino/model/TreinoController.java

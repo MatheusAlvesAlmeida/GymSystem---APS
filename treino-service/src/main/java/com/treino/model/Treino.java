@@ -18,44 +18,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "treinos")
 public class Treino {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @OneToOne
-    @JoinColumn(name = "aluno_id")
     private String alunoID;
-
-    @Column(name = "descricao")
     private String descricao;
-
-    @Column(name = "tipo")
     private String tipo;
-    
-    public String getalunoID() {
-        return alunoID;
-    }
-
-    public void setalunoID(String alunoID) {
-        this.alunoID = alunoID;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao){
-        this.descricao = descricao;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 }
