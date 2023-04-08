@@ -23,9 +23,9 @@ public class LoginAPI {
 
     @PostMapping
     public String login(@RequestParam("cpf") String cpf,
-            @RequestParam("password") String password,
+            @RequestParam("senha") String senha,
             HttpSession session) {
-        Usuario user = facade.loginUser(cpf, password);
+        Usuario user = facade.loginUser(cpf, senha);
         if (user instanceof Funcionario) {
             return "redirect:/funcionario";
         } else if (user instanceof Aluno) {

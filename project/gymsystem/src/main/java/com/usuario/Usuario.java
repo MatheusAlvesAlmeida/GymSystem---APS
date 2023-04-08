@@ -2,7 +2,6 @@ package com.usuario;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -26,43 +25,56 @@ public class Usuario {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
-    public String getPassword() {
+
+    public String getSenha() {
         return senha;
     }
-    public void setPassword(String password) {
-        this.senha = password;
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
+
     public String getCpf() {
         return cpf;
     }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getTelefone(){
+
+    public String getTelefone() {
         return this.telefone;
     }
-    public void setTelefone(String telefone){
+
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    public String getDataNascimento(){
+
+    public String getDataNascimento() {
         return this.dataNascimento;
     }
-    public void setDataNascimento(String dataNascimento){
+
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return this.email;
     }
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
 }
