@@ -1,0 +1,8 @@
+com/aluno/model/AlunoRegister.class
+com/aluno/api/AlunosAPI.class
+com/aluno/model/Aluno.class
+com/aluno/model/AlunoJPARepository.class
+com/aluno/App.class
+com/aluno/model/IAlunoRepository.class
+com/aluno/model/AlunoController.class
+com/aluno/model/AlunoDAO.class

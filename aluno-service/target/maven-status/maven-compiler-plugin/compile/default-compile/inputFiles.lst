@@ -1,0 +1,9 @@
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/api/AlunosAPI.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/AlunoRegister.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/AlunoDAO.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/AlunoObserver.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/App.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/Aluno.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/AlunoController.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/IAlunoRepository.java
+/home/matheus/Documentos/CIN/GymSystem---APS/aluno-service/src/main/java/com/aluno/model/AlunoJPARepository.java
