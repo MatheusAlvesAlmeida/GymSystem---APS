@@ -1,5 +1,6 @@
 package com.aluno;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.treino.Treino;
 import com.usuario.Usuario;
 
@@ -13,9 +14,10 @@ public class Aluno extends Usuario {
     private String plano;
     @Column(name = "dataInicio")
     private String dataInicio;
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "treino_id")
-    private String treinoID;
+    @JsonBackReference
+    private Treino treino;
 
     // Getters and Setters
     public String getPlano() {
@@ -34,11 +36,11 @@ public class Aluno extends Usuario {
         this.dataInicio = dataInicio;
     }
 
-    public String getTreinoID() {
-        return treinoID;
+    public Treino getTreino() {
+        return treino;
     }
 
-    public void setTreinoID(String treinoID) {
-        this.treinoID = treinoID;
+    public void setTreino(Treino treino) {
+        this.treino = treino;
     }
 }
