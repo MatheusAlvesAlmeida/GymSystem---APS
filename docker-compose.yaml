@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  aluno-service:
+    build: ./aluno-service
+    ports:
+      - "8080:8080"
+
+  treino-service:
+    build: ./treino-service
+    ports:
+      - "8081:8081"
