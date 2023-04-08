@@ -13,27 +13,32 @@ public class Aluno extends Usuario {
     private String plano;
     @Column(name = "dataInicio")
     private String dataInicio;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "treino_id")
-    private Treino treino;
+    private String treinoID;
 
     // Getters and Setters
     public String getPlano() {
         return plano;
     }
+
     public void setPlano(String plano) {
         this.plano = plano;
     }
+
     public String getDataInicio() {
         return dataInicio;
     }
+
     public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
-    public Treino getTreino() {
-        return treino;        
+
+    public String getTreinoID() {
+        return treinoID;
     }
-    public void setTreino(Treino treino) {
-        this.treino = treino;
+
+    public void setTreinoID(String treinoID) {
+        this.treinoID = treinoID;
     }
 }

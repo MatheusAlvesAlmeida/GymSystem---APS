@@ -40,11 +40,10 @@ public class AlunoController implements AlunoObserver{
 
     @Override
     public void onTreinoUpdated(Treino treino) {
-        List<Aluno> alunos = treino.getAlunos();
-        for (Aluno aluno : alunos) {
-            aluno.setTreino(treino);
-            alunoRegister.update(aluno.getCpf(), aluno);
-        }
+        String alunoID = treino.getAlunoID();
+        Aluno aluno = alunoRegister.getAlunoByCpf(alunoID);
+        aluno.setTreinoID(alunoID);
+        alunoRegister.update(alunoID, aluno);
         // Enviar email
     }
 }

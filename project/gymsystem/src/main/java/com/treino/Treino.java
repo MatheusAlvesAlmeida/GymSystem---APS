@@ -1,15 +1,11 @@
 package com.treino;
 
-import java.util.List;
-
-import com.aluno.Aluno;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,8 +16,8 @@ public class Treino {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name = "alunos")
-    @OneToMany(mappedBy = "treino")
-    private List<Aluno> alunos;
+    @OneToOne(mappedBy = "treino")
+    private String alunoID;
     @Column(name = "descricao")
     private String descricao;
     @Column(name = "tipo")
@@ -43,11 +39,11 @@ public class Treino {
         this.tipo = tipo;
     }
 
-    public List<Aluno> getAlunos(){
-        return alunos;
+    public String getAlunoID() {
+        return alunoID;
     }
 
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
+    public void setAlunoID(String alunoID) {
+        this.alunoID = alunoID;
     }
 }
