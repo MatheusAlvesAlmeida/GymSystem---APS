@@ -3,10 +3,16 @@ version: "3"
 services:
   aluno-service:
     build: ./aluno-service
-    ports:
-      - "8080:8080"
+    depends_on:
+      - discovery-server
 
   treino-service:
     build: ./treino-service
-    ports:
-      - "8081:8081"
+    depends_on:
+      - discovery-server
+
+  discovery-server:
+        build:
+            context: ./discovery-server/
+        ports:
+            - "8080:8080"
