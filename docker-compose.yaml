@@ -15,10 +15,12 @@ services:
     build:
       context: ./discovery-server/
     ports:
-      - "8080:8080"
+      - "8761:8761"
 
   gateway:
     build:
       context: ./gateway
     ports:
       - "8084:8084"
+    depends_on:
+      - discovery-server
