@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CadastroFuncionarioApi } from './api/cadastro-funcionario.api';
+import { CadastroFuncionarioApi } from './api/funcionario.api';
 import { CadastroFuncionarioState } from './state/cadastro-funcionario.state';
 
 @Injectable()

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CadastroFuncionarioApi } from './api/cadastro-funcionario.api';
+import { CadastroFuncionarioApi } from './api/funcionario.api';
 import { CadastroFuncionarioFormComponent } from './components/cadastro-funcionario-form/cadastro-funcionario-form.component';
 import { CadastroFuncionarioFacade } from './cadastro-funcionario.facade';
 import { CadastroFuncionarioComponent } from './pages/cadastro-funcionario.component';
