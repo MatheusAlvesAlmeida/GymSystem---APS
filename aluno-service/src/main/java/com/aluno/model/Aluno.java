@@ -24,5 +24,5 @@ public class Aluno {
     private String email;
     private String plano;
     private String dataInicio;
-    private String treinoID;
+    private int treinoID;
 }
