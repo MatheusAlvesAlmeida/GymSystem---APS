@@ -12,7 +12,7 @@ public class AlunoDTO {
     private String email;
     private String plano;
     private String dataInicio;
-    private String treinoID;
+    private int treinoID;
 
     public Aluno toEntity(){
         return Aluno.builder()
