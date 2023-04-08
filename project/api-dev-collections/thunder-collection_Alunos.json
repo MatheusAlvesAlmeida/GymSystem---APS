@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Alunos",
+    "dateExported": "2023-04-08T19:22:22.281Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed33e670-db32-41f7-84d2-c211f9bf7427",
+            "colId": "a94c6795-ab90-48bc-9f6c-99b0b6f181e9",
+            "containerId": "",
+            "name": "Alunos",
+            "url": "http://localhost:8080/api/alunos",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-08T18:51:28.009Z",
+            "modified": "2023-04-08T18:51:28.009Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 1,\n    \"cpf\": \"000.000.000-00\",\n    \"senha\": \"123\",\n    \"nome\": \"Gabriel\",\n    \"telefone\": \"81999999999\",\n    \"dataNascimento\": \"01/01/1960\",\n    \"email\": \"email@email.com\",\n    \"plano\": \"silver\",\n    \"dataInicio\": \"01/01/2023\",\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8647fabd-f062-4301-93d6-de4eb10a5cfd",
+            "colId": "a94c6795-ab90-48bc-9f6c-99b0b6f181e9",
+            "containerId": "",
+            "name": "Alunos",
+            "url": "http://localhost:8080/api/alunos",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-08T18:51:33.271Z",
+            "modified": "2023-04-08T18:58:55.928Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cpf\": \"123456\",\n  \"senha\": \"123456\",\n  \"nome\": \"Gabriel\",\n  \"telefone\": \"81999999999\",\n  \"dataNascimento\": \"01/01/1960\",\n  \"email\": \"email@email.com\",\n  \"plano\": \"silver\",\n  \"dataInicio\": \"01/01/2023\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

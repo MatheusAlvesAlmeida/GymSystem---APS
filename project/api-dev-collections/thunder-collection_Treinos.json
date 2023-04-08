@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Treinos",
+    "dateExported": "2023-04-08T19:22:11.371Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fc6a5078-9399-4b36-812e-70403f7b9eb5",
+            "colId": "2f18da4d-086c-4f38-af9b-e92a8de35c71",
+            "containerId": "",
+            "name": "Treinos",
+            "url": "http://localhost:8080/api/treinos/1",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-04-08T18:50:15.977Z",
+            "modified": "2023-04-08T19:17:26.989Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"alunos\": [\n    {\n      \"id\": 1,\n      \"cpf\": \"123456\",\n      \"senha\": \"123456\",\n      \"nome\": \"Gabriel\",\n      \"telefone\": \"81999999999\",\n      \"dataNascimento\": \"01/01/1960\",\n      \"email\": \"email@email.com\",\n      \"plano\": \"silver\",\n      \"dataInicio\": \"01/01/2023\"\n    }\n  ],\n  \"descricao\": \"b\",\n  \"tipo\": \"b\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "140e3d95-79dc-44e8-9c0d-ed88ac9349d1",
+            "colId": "2f18da4d-086c-4f38-af9b-e92a8de35c71",
+            "containerId": "",
+            "name": "Treinos",
+            "url": "http://localhost:8080/api/treinos",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-08T18:50:31.747Z",
+            "modified": "2023-04-08T18:50:31.747Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "96cb1439-c51a-4c0c-84c3-491ca3994483",
+            "colId": "2f18da4d-086c-4f38-af9b-e92a8de35c71",
+            "containerId": "",
+            "name": "Treinos",
+            "url": "http://localhost:8080/api/treinos",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-08T18:51:18.211Z",
+            "modified": "2023-04-08T18:59:06.684Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"descricao\": \"a\",\n  \"tipo\": \"a\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
