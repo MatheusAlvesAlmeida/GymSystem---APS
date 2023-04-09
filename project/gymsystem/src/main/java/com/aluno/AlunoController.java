@@ -1,18 +1,21 @@
 package com.aluno;
 
-import java.util.List;
-
+import com.email.EmailSender;
+import com.treino.Treino;
+import com.treino.TreinoObservable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.treino.Treino;
-import com.treino.TreinoObservable;
+import java.util.List;
 
 @Controller
 public class AlunoController implements AlunoObserver {
     @Autowired
     AlunoRegister alunoRegister;
     private TreinoObservable treinoObservable;
+
+    @Autowired
+    private EmailSender emailService;
 
     public AlunoController(TreinoObservable treinoObservable) {
         this.treinoObservable = treinoObservable;
@@ -45,8 +48,18 @@ public class AlunoController implements AlunoObserver {
             for (Aluno aluno : alunos) {
                 aluno.setTreino(treino);
                 alunoRegister.update(aluno.getCpf(), aluno);
+
+                String to = aluno.getEmail();
+                String subject = "Treino Atualizado";
+                String text = "Querido " + aluno.getNome()
+                        + ",\n\nSeu treino foi atualizado, confira em nosso site.\n\nAtenciosamente,\n\nGymSystem";
+
+                try {
+                    emailService.sendSimpleMail(to, subject, text);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
-        // Enviar email
     }
 }
