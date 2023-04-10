@@ -20,6 +20,7 @@ import com.treino.model.TreinoController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class TreinosAPI {
     @Autowired TreinoController controller;
+    @Autowired AlunoClient alunoClient;
 
     @RequestMapping
     public Iterable<Treino> getTreinos() {
@@ -30,12 +31,14 @@ public class TreinosAPI {
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<Object> postTreino(@RequestBody Treino treino) {
         controller.createNewTreino(treino);
+        alunoClient.notifyAluno(treino.getAlunoID());
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public ResponseEntity<Object> deleteTreino(@RequestBody int id) {
+        alunoClient.notifyAluno(controller.getTreinoById(id).getAlunoID());
         controller.deleteTreino(id);
         return ResponseEntity.ok().build();
     }
@@ -43,6 +46,7 @@ public class TreinosAPI {
     @PutMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<Object> putTreino(@RequestBody int id, Treino treino) {
+        alunoClient.notifyAluno(controller.getTreinoById(id).getAlunoID());
         controller.updateTreino(id, treino);
         return ResponseEntity.ok().build();
     }
