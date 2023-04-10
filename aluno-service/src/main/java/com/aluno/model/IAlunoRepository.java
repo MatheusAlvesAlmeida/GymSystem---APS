@@ -10,4 +10,6 @@ public interface IAlunoRepository{
     Aluno getAlunoByCpf(String cpf);
 
     void update(String cpf, Aluno aluno);
+
+    void notifyUpdate();
 }

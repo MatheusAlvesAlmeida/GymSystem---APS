@@ -48,4 +48,11 @@ public class AlunosAPI {
         controller.updateAluno(cpf, aluno);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/notify")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public ResponseEntity<Object> notifyAluno(@RequestBody String cpf) {
+        controller.notifyUpdate(cpf);
+        return ResponseEntity.ok().build();
+    }
 }

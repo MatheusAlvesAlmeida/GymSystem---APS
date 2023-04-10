@@ -27,6 +27,10 @@ public class AlunoController {
         return alunoRegister.getAlunoByCpf(cpf);
     }
 
+    public void notifyUpdate(String cpf) {
+        alunoRegister.notifyUpdate();
+    }
+
     // @Override
     // public void onTreinoUpdated(Treino treino) {
     //     List<Aluno> alunos = treino.getAlunos();

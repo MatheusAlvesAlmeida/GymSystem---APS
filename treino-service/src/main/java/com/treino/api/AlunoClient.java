@@ -7,6 +7,6 @@ public class AlunoClient {
     @Autowired RestTemplate restTemplate;
 
     public void notifyAluno(String alunoId) {
-        restTemplate.postForEntity("http://aluno-service/api/alunos/" + alunoId + "/notify", null, Void.class);
+        restTemplate.postForEntity("http://aluno-service/api/alunos/notify/" + alunoId, null, Void.class);
     }
 }

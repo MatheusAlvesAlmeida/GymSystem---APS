@@ -30,4 +30,8 @@ public class AlunoRegister{
     public void update(String cpf, Aluno aluno){
         AlunoRepository.update(cpf, aluno);
     }
+
+    public void notifyUpdate() {
+        AlunoRepository.notifyUpdate();
+    }
 }
